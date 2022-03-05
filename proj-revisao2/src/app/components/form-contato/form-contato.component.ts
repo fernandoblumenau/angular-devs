@@ -1,6 +1,7 @@
 import { ViaCepModel } from './../../models/via-cep-model';
 import { ViaCepApiService } from './../../services/via-cep-api.service';
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-form-contato',
@@ -10,22 +11,28 @@ import { Component, OnInit } from '@angular/core';
 export class FormContatoComponent implements OnInit {
 
   formContato: ViaCepModel ={};
-  showForm: boolean = false;
+
+  showForm = new Subject<boolean>();
+
+  cepInput: string ='';
 
   constructor(private cepService: ViaCepApiService) { }
 
   ngOnInit(): void {
-    this.getViaCep('89021000');
+
   }
 
-  getViaCEP(cep: any){
-    this.cepService
-      .getCep(cep)
-      .subscribe(
-        (response) =>{
-          console.log(response);
+  getViaCEP(cep: FocusEvent){
+    if((cep.target as HTMLInputElement)?.value){
+      let inputCEP = (cep.target as HTMLInputElement)?.value;
+      console.log(inputCEP);
+      const cepResponse = this.cepService.getCep(inputCEP);
+      cepResponse.subscribe(
+        (cepModel) =>{
+          this.formContato = cepModel;
+          this.showForm.next(true);
         }
-      );
+      )
+    }
   }
-
 }

@@ -1,7 +1,7 @@
 export class ViaCepModel{
 
   cep?: string;
-  logradoro?: string;
+  logradouro?: string;
   comlemento?: string;
   bairro?: string;
   localidade?: string;
@@ -10,6 +10,7 @@ export class ViaCepModel{
   gia?: string;
   ddd?: string;
   siafi?: string;
+  numero?: number;
 
   constructor(object: Partial<ViaCepModel>){
     Object.assign(this, object);
