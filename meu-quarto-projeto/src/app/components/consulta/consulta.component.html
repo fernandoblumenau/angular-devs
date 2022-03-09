@@ -1,0 +1,44 @@
+<main class="container">
+
+  <header class="bg-info">
+    <app-header></app-header>
+  </header>
+
+  <fieldset>
+      <legend>Consulta Cidade</legend>
+      <form>
+          <div class="form-group row">
+              <label for="nome" class="col-sm-2 col-form-label">UF</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" name="nome">
+              </div>
+          </div>
+
+
+          <!-- Endereco - API -->
+          <div name="retornoCEP">
+
+            <select class="form-select" aria-label="Default select example">
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+
+          </div>
+
+          <div class="form-group row">
+              <div class="col-sm-10">
+                  <button type="submit" class="btn btn-primary">Consultar</button>
+              </div>
+          </div>
+      </form>
+  </fieldset>
+
+  <footer class="bg-primary my-4">
+    <div class="container-fluid">
+      <app-footer></app-footer>
+    </div>
+  </footer>
+
+</main>
+

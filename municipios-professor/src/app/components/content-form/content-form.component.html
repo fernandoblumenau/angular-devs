@@ -1,0 +1,16 @@
+<form action="">
+  <label for="uf">UF
+    <select (change)="loadMunicipiosByUF($event)" name="uf" id="uf">
+      <option value="">Selecione</option>
+      <option value="SC">SC</option>
+      <option value="PA">PA</option>
+      <option value="PR">PR</option>
+    </select>
+  </label>
+  <br>
+  <label for="cidades">Cidades
+    <select name="cidades" id="cidades">
+      <option *ngFor="let cidade of cidades$ | async" value="{{cidade.id}}">{{cidade.nome}} </option>
+    </select>
+  </label>
+</form>
