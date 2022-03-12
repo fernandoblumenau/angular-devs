@@ -8,7 +8,16 @@ export const environment = {
   urlApiViaCEP: 'https://viacep.com.br/ws/',
   urlApiIBGE: 'https://servicodados.ibge.gov.br/api/v1/localidades/',
   loginUser: 'fernando',
-  passUser: '123456'
+  passUser: '123456',
+  firebaseConfig: {
+    apiKey: "AIzaSyB13DrRjjCMmw0W9gy-n2ZKwSCZnauC4-g",
+    authDomain: "proj-api-form-fernando.firebaseapp.com",
+    projectId: "proj-api-form-fernando",
+    storageBucket: "proj-api-form-fernando.appspot.com",
+    messagingSenderId: "131276423984",
+    appId: "1:131276423984:web:84eaca2848fbcff2b3bef5",
+    measurementId: "G-ECTHWL8VTR"
+  }
 };
 
 /*

@@ -1,3 +1,4 @@
+import { FilmesService } from './../../services/filmes.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListFilmesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private FilmesService: FilmesService) { }
 
   ngOnInit(): void {
+    this.FilmesService.getListFilmes();
   }
 
 }
