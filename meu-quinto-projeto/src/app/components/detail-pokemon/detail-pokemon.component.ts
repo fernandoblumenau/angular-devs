@@ -13,16 +13,22 @@ export class DetailPokemonComponent implements OnInit {
 
   pokemoObj: Pokemon = new Pokemon({});
 
-
   constructor(private route: ActivatedRoute,
-              private PokeApiService: PokeApiService) { }
+              private pokeApiService: PokeApiService) { }
 
   ngOnInit(): void {
-
     let name = this.route.snapshot.paramMap.get('name');
     if(name){
-      this.PokeApiService.getListPokemonByNameOrId(name);
+      this.pokeApiService
+          .getListPokemonByNameOrId(name)
+          .subscribe((pokemon)=>{
+            console.log(pokemon);
+            this.pokemoObj=pokemon;
+          })
+
     }
   }
 
 }
+
+

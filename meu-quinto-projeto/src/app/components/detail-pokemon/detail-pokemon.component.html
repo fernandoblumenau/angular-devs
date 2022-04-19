@@ -1,1 +1,66 @@
-<p>detail-pokemon works!</p>
+<section id="dados-basicos">
+  <fieldset>
+    <legend>{{ pokemoObj.name | uppercase }}</legend>
+    <div class="row">
+      <div class="card col-lg-3">
+        <img
+          src="{{ pokemoObj.sprites?.front_default }}"
+          class="card-img-top"
+          alt="{{ pokemoObj.name }}"
+        />
+      </div>
+        <div class="card col-lg-3">
+          <img
+            src="{{ pokemoObj.sprites?.back_default }}"
+            class="card-img-top"
+            alt="{{ pokemoObj.name }}"
+          />
+        </div>
+        <div class="card col-lg-3">
+          <img
+            src="{{ pokemoObj.sprites?.front_default }}"
+            class="card-img-top"
+            alt="{{ pokemoObj.name }}"
+          />
+        </div>
+        <div class="card col-lg-3">
+          <img
+            src="{{ pokemoObj.sprites?.back_shiny }}"
+            class="card-img-top"
+            alt="{{ pokemoObj.name }}"
+          />
+      </div>
+    </div>
+  </fieldset>
+</section>
+
+<hr>
+
+<section id = "dados-basicos">
+  <div class="row">
+    <div class="col-lg-1">
+      <label>Height</label>
+    </div>
+    <div class="col-lg-2">
+      <b> {{pokemoObj.height}}</b>
+    </div>
+    <div class="col-lg-1">
+      <label style="font-size:12px;">base Experience</label>
+    </div>
+    <div class="col-lg-2">
+      <b> {{pokemoObj.base_experience}}</b>
+    </div>
+  </div>
+</section>
+
+<hr>
+<section id ="abilities">
+  <div class="row">
+    <div *ngFor="let ability of pokemoObj.abilities" class="col-lg-4">
+      <span class="badge rounded-pill bg-info"> {{ability.slot}}</span>
+      <span class="text-danger col-lg-1"> {{ability.ability?.name}}</span> <br>
+      <span class="text-primary col-lg-1"> {{ability.ability?.url}}</span>
+    </div>
+  </div>
+</section>
+

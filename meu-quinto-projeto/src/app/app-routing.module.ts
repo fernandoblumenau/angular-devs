@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {path:'pokemons', component: ListPokemonsComponent},
-  {path:'pokemons/:mame', component: DetailPokemonComponent},
+  {path:'pokemon/:name', component: DetailPokemonComponent},
   {path:'', redirectTo: '/pokemons', pathMatch: 'full'}
 
 ];

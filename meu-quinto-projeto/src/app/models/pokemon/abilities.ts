@@ -4,5 +4,9 @@ export class Abilities {
   slot?: number;
   ability?: ResponseLink;
 
+  constructor(object: Partial<Abilities>){
+    Object.assign (this,object)
+  }
+
 
 }
