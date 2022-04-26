@@ -30,7 +30,7 @@ updade(categoria: Categoria){
 
 
 delete(id: number){
-  return this.http.delete(`${this.urlApi}/${id}`)
+  return this.http.delete<boolean>(`${this.urlApi}/${id}`)
 
 }
 

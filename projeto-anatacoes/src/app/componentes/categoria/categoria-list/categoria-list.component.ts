@@ -25,8 +25,9 @@ list(){
   this.listaCategoria=this.service.getAll();
 }
 
-delete(id: number){
-  this.service.delete(id);
+delete(id?: number){
+  this.service.delete(id||0)
+  .subscribe((resp)=>resp==true ? this.list() : '');
 }
 
 toggleAtivo(id?: number){
@@ -34,7 +35,8 @@ toggleAtivo(id?: number){
     return;
   }
 
-  this.service.toggleAtivo(id || 0);
+  this.service.toggleAtivo(id || 0)
+  .subscribe((resp)=>resp==true ? this.list() : '');
 }
 
 }

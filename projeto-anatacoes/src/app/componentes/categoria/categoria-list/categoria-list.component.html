@@ -1,4 +1,11 @@
 
+
+    <div class="row">
+      <div class="col">
+        <a routerLink="/categoria-add" class="btn btn-success"> &plus; adicionar</a>
+        <hr>
+      </div>
+    </div>
      <div class="row">
       <ul class="list-group col">
         <li *ngFor="let categoria of listaCategoria | async"
@@ -9,8 +16,12 @@
             <input type="checkbox" checked="{{categoria.flAtivo}}"
             (change)="toggleAtivo(categoria.IdCategoria )"
             class="custom-control-input" id="flAtivo">
-            <label class="custom-control-label" for="flAtivo">Ativo</label>
+            <label class="custom-control-label" for="flAtivo_{{categoria.IdCategoria}}">Ativo</label>
           </div>
+          <span class="text-danger">
+           <button (click)="delete(categoria.IdCategoria)" class="btn btn-danger font-weight-bold">&times;</button>
+          </span>
+
         </li>
       </ul>
     </div>
