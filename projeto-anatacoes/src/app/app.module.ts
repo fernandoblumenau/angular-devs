@@ -9,6 +9,8 @@ import { AnatocoesListComponent } from './componentes/anotacoes/anatocoes-list/a
 import { AnatocoesAddComponent } from './componentes/anotacoes/anatocoes-add/anatocoes-add.component';
 import { CategoriaListComponent } from './componentes/categoria/categoria-list/categoria-list.component';
 import { CategoriaAddComponent } from './componentes/categoria/categoria-add/categoria-add.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { CategoriaAddComponent } from './componentes/categoria/categoria-add/cat
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

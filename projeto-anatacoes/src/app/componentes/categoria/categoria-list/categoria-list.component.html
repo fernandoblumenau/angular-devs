@@ -1,1 +1,19 @@
-<p>categoria-list works!</p>
+
+     <div class="row">
+      <ul class="list-group col">
+        <li *ngFor="let categoria of listaCategoria | async"
+            class="list-group-item d-flex justify-content-between">
+          <span class="badge badge-dark" > {{categoria.IdCategoria}} </span>
+          <span>{{categoria.descricaoCategoria}} </span>
+          <div class="custom-control custom-switch">
+            <input type="checkbox" checked="{{categoria.flAtivo}}"
+            (change)="toggleAtivo(categoria.IdCategoria )"
+            class="custom-control-input" id="flAtivo">
+            <label class="custom-control-label" for="flAtivo">Ativo</label>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+
+

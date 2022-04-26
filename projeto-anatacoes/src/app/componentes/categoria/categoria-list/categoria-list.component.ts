@@ -1,4 +1,9 @@
+import { Categoria } from './../../../models/categoria';
+import { CategoriaService } from './../../../services/categoria.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-categoria-list',
@@ -7,9 +12,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriaListComponent implements OnInit {
 
-  constructor() { }
+  listaCategoria = new Observable<Categoria[]>();
+
+  constructor(private service: CategoriaService, private router: Router) { }
+
 
   ngOnInit(): void {
+    this.list();
   }
+
+list(){
+  this.listaCategoria=this.service.getAll();
+}
+
+delete(id: number){
+  this.service.delete(id);
+}
+
+toggleAtivo(id?: number){
+  if(!id){
+    return;
+  }
+
+  this.service.toggleAtivo(id || 0);
+}
 
 }
