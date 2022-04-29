@@ -1,30 +1,49 @@
-
-
-    <div class="row">
-      <div class="col">
-        <a routerLink="/categoria-add" class="btn btn-success"> &plus; adicionar</a>
-        <hr>
-      </div>
-    </div>
-     <div class="row">
-      <ul class="list-group col">
-        <li *ngFor="let categoria of listaCategoria | async"
-            class="list-group-item d-flex justify-content-between">
-          <span class="badge badge-dark" > {{categoria.IdCategoria}} </span>
-          <span>{{categoria.descricaoCategoria}} </span>
+<div class="row">
+  <div class="col">
+    <a routerLink="/categoria-add" class="btn btn-success"> &plus; Adicionar </a>
+    <hr>
+  </div>
+</div>
+<div class="row">
+  <ul class="list-group col-12">
+    <li *ngFor="let categoria of listaCategoria | async"
+        class="list-group-item d-flex justify-content-between">
+      <span class="badge badge-dark" > {{categoria.idCategoria}} </span>
+      <span>{{categoria.descricaoCategoria}} </span>
+      <div class="row">
+        <div class="col-8">
           <div class="custom-control custom-switch">
-            <input type="checkbox" checked="{{categoria.flAtivo}}"
-            (change)="toggleAtivo(categoria.IdCategoria )"
-            class="custom-control-input" id="flAtivo">
-            <label class="custom-control-label" for="flAtivo_{{categoria.IdCategoria}}">Ativo</label>
-          </div>
-          <span class="text-danger">
-           <button (click)="delete(categoria.IdCategoria)" class="btn btn-danger font-weight-bold">&times;</button>
-          </span>
+            <div [ngSwitch]="categoria.flAtivo">
+              <div *ngSwitchCase="true">
+                <input type="checkbox" checked="checked"
+                (change)="toggleAtivo(categoria.idCategoria)"
+                class="custom-control-input" id="flAtivo_{{categoria.idCategoria}}">
+                <label class="custom-control-label" for="flAtivo_{{categoria.idCategoria}}">Ativo</label>
+              </div>
+              <div *ngSwitchDefault>
+                <input type="checkbox"
+                (change)="toggleAtivo(categoria.idCategoria)"
+                class="custom-control-input" id="flAtivo_{{categoria.idCategoria}}">
+                <label class="custom-control-label" for="flAtivo_{{categoria.idCategoria}}">Ativo</label>
+              </div>
+            </div>
 
-        </li>
-      </ul>
-    </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <span class="text-danger">
+            <button (click)="delete(categoria.idCategoria)"
+                  class="btn btn-danger font-weight-bold"> &times; </button>
+          </span>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+
+
 
 
 

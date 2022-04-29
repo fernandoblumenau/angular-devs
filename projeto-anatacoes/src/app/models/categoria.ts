@@ -1,6 +1,6 @@
 export class Categoria {
 
-  IdCategoria?: number;
+  idCategoria?: number;
   descricaoCategoria?: string;
   flAtivo?: boolean;
 

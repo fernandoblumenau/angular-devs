@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { CategoriaService } from './../../../services/categoria.service';
+import { AnotacaoService } from './../../../services/anotacao.service';
+import { Categoria } from './../../../models/categoria';
+import { observable, Subject, Observable } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-anatocoes-add',
@@ -7,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnatocoesAddComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  status = new Subject<boolean>();
+
+  @Input()
+  notaInsert  = new Subject<boolean>();
+
+  categoriaList = new Observable<Categoria[]>();
+
+
+  constructor(private notaService: AnotacaoService,
+    private categoriaService: CategoriaService) { }
 
   ngOnInit(): void {
+    this.categoriaList;
+
+
   }
 
 }

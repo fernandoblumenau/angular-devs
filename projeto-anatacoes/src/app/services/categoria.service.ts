@@ -36,7 +36,7 @@ delete(id: number){
 
 
 toggleAtivo(id?: number){
-  return this.http.post<boolean>(`${this.urlApi}/toggleAtivo`,id)
+  return this.http.put<boolean>(`${this.urlApi}/toggleAtivo`,id)
 }
 
 }

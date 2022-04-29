@@ -1,6 +1,6 @@
 import { Categoria } from './categoria';
 export class Nota {
-  Idnota?: number;
+  idNota?: number;
   tituloNota?: string;
   textoAnotacao?: string;
   categoria: Categoria = new Categoria({});

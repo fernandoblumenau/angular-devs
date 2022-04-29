@@ -9,8 +9,8 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'categorias', component: CategoriaListComponent},
-  {path: 'categoria-add', component: AnatocoesAddComponent},
-  {path: 'nota', component: AnatocoesListComponent},
+  {path: 'categoria-add', component: CategoriaAddComponent},
+  {path: 'notas', component: AnatocoesListComponent},
   {path: 'nota-add', component: AnatocoesAddComponent},
   {path: 'nota-update/:id', component: AnatocoesAddComponent},
   {path: 'categoria-update/:id', component: CategoriaAddComponent},
