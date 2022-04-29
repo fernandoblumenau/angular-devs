@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AnatocoesAddComponent } from './anatocoes-add.component';
+import { AnotacoesListComponent } from './anotacoes-list.component';
 
-describe('AnatocoesAddComponent', () => {
-  let component: AnatocoesAddComponent;
-  let fixture: ComponentFixture<AnatocoesAddComponent>;
+describe('AnotacoesListComponent', () => {
+  let component: AnotacoesListComponent;
+  let fixture: ComponentFixture<AnotacoesListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AnatocoesAddComponent ]
+      declarations: [ AnotacoesListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AnatocoesAddComponent);
+    fixture = TestBed.createComponent(AnotacoesListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

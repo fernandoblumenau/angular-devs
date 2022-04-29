@@ -9,22 +9,18 @@
         <button (click)="delete(nota.idNota)" class="btn btn-sm btn-danger">Delete</button>
       </div>
     </div>
-
-    <div *ngIf= "criando$ | async" id="add">
-      <app-anatocoes-add [status]= "criado$"> </app-anatocoes-add>
+    <div *ngIf="criando$ | async" id="add">
+      <app-anotacoes-add [status]="criado$"></app-anotacoes-add>
     </div>
-
   </div>
 </div>
 
-
 <div class="plus-btn">
-  <button class="btn btn-circle btn-success">
-    &plus;
-
+  <button (click)="newNota()" class="btn btn-circle btn-success">
+    +
   </button>
-
 </div>
+
 
 
 

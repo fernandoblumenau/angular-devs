@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
-import { AnatocoesListComponent } from './componentes/anotacoes/anatocoes-list/anatocoes-list.component';
-import { AnatocoesAddComponent } from './componentes/anotacoes/anatocoes-add/anatocoes-add.component';
+import { AnotacoesListComponent } from './componentes/anotacoes/anotacoes-list/anotacoes-list.component';
+import { AnotacoesAddComponent } from './componentes/anotacoes/anotacoes-add/anotacoes-add.component';
 import { CategoriaListComponent } from './componentes/categoria/categoria-list/categoria-list.component';
 import { CategoriaAddComponent } from './componentes/categoria/categoria-add/categoria-add.component';
 import { FormsModule } from '@angular/forms';
@@ -17,8 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    AnatocoesListComponent,
-    AnatocoesAddComponent,
+    AnotacoesListComponent,
+    AnotacoesAddComponent,
     CategoriaListComponent,
     CategoriaAddComponent
   ],
