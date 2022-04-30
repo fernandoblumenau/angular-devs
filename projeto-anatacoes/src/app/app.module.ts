@@ -20,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     AnotacoesListComponent,
     AnotacoesAddComponent,
     CategoriaListComponent,
-    CategoriaAddComponent
+    CategoriaAddComponent,
+
   ],
   imports: [
     BrowserModule,

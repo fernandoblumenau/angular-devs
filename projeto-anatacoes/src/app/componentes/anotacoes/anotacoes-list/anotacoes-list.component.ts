@@ -10,35 +10,61 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnotacoesListComponent implements OnInit {
 
-  listaNotas$ = new Observable<Nota[]>();
+  // listaNotas$ = new Observable<Nota[]>();
 
-  notaSaveCurrent = new Nota({});
+  // notaSaveCurrent = new Nota({});
+  // notaDel = new Nota({});
 
-  criando$ = new Subject<boolean>();
-  criado$ = new Subject<boolean>();
+  // criando$ = new Subject<boolean>();
+  // criado$ = new Subject<boolean>();
   constructor(private service: AnotacaoService) { }
 
   ngOnInit(): void {
-    this.getList();
-    this.criado$.subscribe((resp) => {
-      this.criando$.next(resp);
-      this.getList();
-    });
+    // this.getList();
+    // this.criado$.subscribe((resp) => {
+    //   this.criando$.next(resp);
+    //   this.getList();
+    // });
   }
 
-  getList() {
-    this.listaNotas$ = this.service.getAll();
-  }
+  // getList() {
+  //   this.listaNotas$ = this.service.getAll();
+  // }
 
-  delete(id?: number) {
 
-  }
+  // deleteConfirm(nota?: Nota) {
+  //   if(nota){
+  //     this.notaDel = nota;
+  //   }
+  // }
 
-  newNota(){
-    this.criando$.next(true);
-  }
+  // cancelDelete(id?: number){
+  //   if(!id){
+  //     return
+  //   }
+  // }
 
-  update(id?: number) {
+  // delete(id?: number) {
+  //   if(!id){
+  //     return;
+  //   }
 
-  }
+  //   this.service
+  //     .delete(id || 0)
+  //     .subscribe(
+  //       resp => {
+  //         console.log('registro excluido');
+  //         this.notaDel= new Nota({});
+  //         this.getList();
+  //       }
+  //     );
+  // }
+
+  // newNota(){
+  //   this.criando$.next(true);
+  // }
+
+  // update(id?: number) {
+
+  // }
 }

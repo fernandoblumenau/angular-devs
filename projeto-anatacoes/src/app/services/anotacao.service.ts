@@ -30,6 +30,6 @@ export class AnotacaoService {
   }
 
   delete(id: number){
-  return this.http.delete(`${this.urlApi}/${id}`)
+  return this.http.delete<boolean>(`${this.urlApi}/${id}`)
   }
 }

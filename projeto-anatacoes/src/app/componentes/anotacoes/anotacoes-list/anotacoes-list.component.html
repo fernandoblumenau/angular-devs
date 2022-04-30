@@ -1,12 +1,13 @@
-<div id="quadro" class="d-flex justify-content-between bg-quadro p-5">
-  <div class="row">
-    <div *ngFor="let nota of listaNotas$ | async " class="card bg-nota" style="width: 18rem;">
+<div id="quadro" class="bg-quadro p-5">
+  <div class="row d-flex justify-content-between">
+    <div *ngFor="let nota of listaNotas$ | async " class="card bg-nota mb-2" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title"> {{nota.tituloNota}} </h5>
         <h6 class="card-subtitle mb-2 text-muted"> {{nota.categoria.descricaoCategoria}} </h6>
         <p class="card-text"> {{nota.textoAnotacao}} </p>
         <button (click)="update(nota.idNota)" class="btn btn-sm btn-success">Update</button>
-        <button (click)="delete(nota.idNota)" class="btn btn-sm btn-danger">Delete</button>
+        <button (click)="deleteConfirm(nota)" class="btn btn-sm btn-danger"
+                data-toggle="modal" data-target="#modalDeleteNota">Delete</button>
       </div>
     </div>
     <div *ngIf="criando$ | async" id="add">
@@ -16,9 +17,14 @@
 </div>
 
 <div class="plus-btn">
-  <button (click)="newNota()" class="btn btn-circle btn-success">
+  <button (click)="newNota()" class="btn btn-circle rounded-circle btn-success">
     +
   </button>
+</div>
+
+
+<div id="modal-container">
+
 </div>
 
 
