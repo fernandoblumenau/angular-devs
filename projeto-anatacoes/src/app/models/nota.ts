@@ -5,7 +5,8 @@ export class Nota {
   textoAnotacao?: string;
   categoria: Categoria = new Categoria({});
 
-  constructor(obj: Partial<Nota>){
-    Object.assign(this,obj)
+  constructor(obj: Partial<Nota>) {
+    Object.assign(this, obj);
   }
+
 }

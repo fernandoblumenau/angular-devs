@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Nota } from './../../../models/nota';
+import { Subject } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-anotacoes-modal-save',
@@ -6,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./anotacoes-modal-save.component.scss']
 })
 export class AnotacoesModalSaveComponent implements OnInit {
+
+  @Input()
+    statusSave$ = new Subject<boolean>();
+
+    @Input()
+    notaSave = new Nota({});
 
   constructor() { }
 

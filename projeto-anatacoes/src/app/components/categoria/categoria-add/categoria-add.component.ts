@@ -1,6 +1,6 @@
-import { Categoria } from './../../../models/categoria';
+import { CategoriaService } from './../../../services/categoria.service';
 import { Component, OnInit } from '@angular/core';
-import { CategoriaService } from 'src/app/services/categoria.service';
+import { Categoria } from 'src/app/models/categoria';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -10,7 +10,8 @@ import { Subject } from 'rxjs';
 })
 export class CategoriaAddComponent implements OnInit {
 
-  formCategoria: Categoria = new Categoria({})
+  formCategoria: Categoria = new Categoria({});
+
   msgRetorno = new Subject<boolean>();
 
   constructor(private service: CategoriaService) { }
@@ -18,18 +19,17 @@ export class CategoriaAddComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  save(){
+  save() {
     this.service
         .save(this.formCategoria)
         .subscribe(
-        (categoria) => {
-          if(categoria.idCategoria){
-            this.formCategoria=categoria;
-            this.msgRetorno.next(true);
-
-         }
-        }
-      );
+          (categoria) => {
+            if(categoria.idCategoria) {
+              this.formCategoria = categoria;
+              this.msgRetorno.next(true);
+            }
+          }
+        );
   }
 
 }

@@ -3,14 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './componentes/home/home.component';
-import { NavbarComponent } from './componentes/navbar/navbar.component';
-import { AnotacoesListComponent } from './componentes/anotacoes/anotacoes-list/anotacoes-list.component';
-import { AnotacoesAddComponent } from './componentes/anotacoes/anotacoes-add/anotacoes-add.component';
-import { CategoriaListComponent } from './componentes/categoria/categoria-list/categoria-list.component';
-import { CategoriaAddComponent } from './componentes/categoria/categoria-add/categoria-add.component';
-import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AnotacoesListComponent } from './components/anotacoes/anotacoes-list/anotacoes-list.component';
+import { AnotacoesAddComponent } from './components/anotacoes/anotacoes-add/anotacoes-add.component';
+import { CategoriaListComponent } from './components/categoria/categoria-list/categoria-list.component';
+import { CategoriaAddComponent } from './components/categoria/categoria-add/categoria-add.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { AnotacoesModalSaveComponent } from './components/anotacoes/anotacoes-modal-save/anotacoes-modal-save.component';
+import { AnotacoesModalDeleteComponent } from './components/anotacoes/anotacoes-modal-delete/anotacoes-modal-delete.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     AnotacoesAddComponent,
     CategoriaListComponent,
     CategoriaAddComponent,
-
+    AnotacoesModalSaveComponent,
+    AnotacoesModalDeleteComponent
   ],
   imports: [
     BrowserModule,

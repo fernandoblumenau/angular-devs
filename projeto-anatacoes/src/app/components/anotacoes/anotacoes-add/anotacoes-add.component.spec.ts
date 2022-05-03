@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AnotacoesAddComponent } from './anotacoes-add.component';
 
-describe('AnatocoesAddComponent', () => {
+describe('AnotacoesAddComponent', () => {
   let component: AnotacoesAddComponent;
   let fixture: ComponentFixture<AnotacoesAddComponent>;
 
